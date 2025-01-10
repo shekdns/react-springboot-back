@@ -2,6 +2,8 @@ package org.zerock.mallapi.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -24,6 +26,7 @@ MyISAM 엔진은 트랜잭션 처리가 필요 없고, Read only 기능이 많�
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Todo {
 
   @Id
