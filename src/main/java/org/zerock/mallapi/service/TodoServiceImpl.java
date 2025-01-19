@@ -48,6 +48,8 @@ public class TodoServiceImpl implements TodoService {
 
     TodoDTO dto = modelMapper.map( todo, TodoDTO.class );
 
+    log.info("Response JSON: {}", todo);
+
     return dto;
   }
 
@@ -58,7 +60,7 @@ public class TodoServiceImpl implements TodoService {
     Todo todo = result.orElseThrow();
 
     todo.changeTitle( todoDTO.getTitle() );
-    todo.changeDueDate( todoDTO.getDueDate() );
+    todo.changeDueDate( todoDTO.getDue_date() );
     todo.changeComplete( todoDTO.isComplete() );
 
     todoRepository.save( todo );

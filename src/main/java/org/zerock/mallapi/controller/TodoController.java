@@ -31,7 +31,7 @@ public class TodoController {
   @PostMapping( "/" )
   public Map<String, Long> register( @RequestBody TodoDTO todoDTO ) {
     log.info( "todoDTO : {}", todoDTO );
-    log.info( "@@@@@@@@@@ = " + todoDTO.getDueDate() );
+    log.info( "@@@@@@@@@@ = " + todoDTO.getDue_date() );
 
     Long tno = service.register( todoDTO );
 

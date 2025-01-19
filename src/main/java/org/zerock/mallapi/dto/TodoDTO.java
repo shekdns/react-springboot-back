@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -22,6 +23,7 @@ public class TodoDTO {
 
   private boolean complete;
 
+  //@DateTimeFormat(pattern = "yyyy-MM-dd")
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" )
-  private LocalDate dueDate;
+  private LocalDate due_date;
 }

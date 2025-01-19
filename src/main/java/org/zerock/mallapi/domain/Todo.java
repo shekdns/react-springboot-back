@@ -1,5 +1,6 @@
 package org.zerock.mallapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -39,7 +40,8 @@ public class Todo {
 
   private boolean complete;
 
-  private LocalDate dueDate;
+  @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" )
+  private LocalDate due_date;
 
   public void changeTitle( String title ) {
     this.title = title;
@@ -50,6 +52,6 @@ public class Todo {
   }
 
   public void changeDueDate( LocalDate dueDate ) {
-    this.dueDate = dueDate;
+    this.due_date = dueDate;
   }
 }
