@@ -41,7 +41,7 @@ public class Todo {
   private boolean complete;
 
   @JsonFormat( shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" )
-  private LocalDate due_date;
+  private LocalDate dueDate;
 
   public void changeTitle( String title ) {
     this.title = title;
@@ -52,6 +52,6 @@ public class Todo {
   }
 
   public void changeDueDate( LocalDate dueDate ) {
-    this.due_date = dueDate;
+    this.dueDate = dueDate;
   }
 }
